@@ -1,0 +1,10 @@
+a pasta abaixo "Projeto" abra ela no vscode ou etc. tela inicial é a "homeScreen.php"
+
+
+login para tecnico:
+
+
+user: tecnico
+senha: tecnico123
+
+
