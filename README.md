@@ -1,6 +1,3 @@
-Claro! Aqui está a versão do `README.md` **sem emojis**, com uma estrutura clara e profissional:
-
----
 
 # Sistema de Ordem de Serviço (PHP OO)
 
