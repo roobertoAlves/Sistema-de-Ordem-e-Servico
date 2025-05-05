@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root 
+{
+  --border-color: #5900ff;
+  --text-color: #fff;
+  --border-radius: 30px;
+}
+
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body 
+{
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  color: var(--text-color);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.galaxy-background, .stars, .dust, .fog 
+{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star 
+{
+  position: absolute;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0;
+}
+
+@keyframes twinkle 
+{
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 1; }
+}
+
+.dust-particle 
+{
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: dustAnim 10s infinite ease-in-out;
+}
+
+@keyframes dustAnim 
+{
+  0% { transform: translateY(0) scale(1); opacity: 0.2; }
+  50% { transform: translateY(-40px) scale(1.4); opacity: 0.5; }
+  100% { transform: translateY(0) scale(1); opacity: 0.2; }
+}
+
+.fog 
+{
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 70%);
+  animation: fogMove 60s linear infinite;
+  opacity: 0.05;
+}
+
+@keyframes fogMove 
+{
+  0% { transform: translate(-10%, -10%) scale(1); }
+  50% { transform: translate(10%, 10%) scale(1.2); }
+  100% { transform: translate(-10%, -10%) scale(1); }
+}
+
+.back-button 
+{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.login-container 
+{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+}
+
+.login-box 
+{
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 40px 30px;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover 
+{
+    transform: scale(1.03);
+    animation: borderAnimation 5s linear infinite;
+    box-shadow: 0 0 15px 3px rgba(255, 255, 0, 0.3);
+}
+
+.login-box h2 
+{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.input-group 
+{
+  margin-bottom: 20px;
+}
+
+.input-group input 
+{
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.input-group input:focus 
+{
+  outline: none;
+  border-radius: 50px;
+  border-color: var(--border-color);
+}
+
+.button 
+{
+  padding: 12px 24px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 30px;
+  color: #fff;
+  background-color: transparent;
+  border: 3px solid var(--border-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.button:hover 
+{
+  animation: backgroundAnimation 5s linear infinite, borderAnimation 5s linear infinite;
+  color: #000;
+  box-shadow: 0 0 15px 3px rgba(255, 255, 0, 0.3);
+}
+
+@keyframes backgroundAnimation 
+{
+  0% { background-color: red; }
+  14% { background-color: orange; }
+  28% { background-color: yellow; }
+  42% { background-color: green; }
+  57% { background-color: blue; }
+  71% { background-color: indigo; }
+  85% { background-color: violet; }
+  100% { background-color: red; }
+}
+
+@keyframes borderAnimation 
+{
+  0% { border-color: red; }
+  14% { border-color: orange; }
+  28% { border-color: yellow; }
+  42% { border-color: green; }
+  57% { border-color: blue; }
+  71% { border-color: indigo; }
+  85% { border-color: violet; }
+  100% { border-color: red; }
+}
+
+@media (max-width: 480px) 
+{
+  .login-box 
+  {
+    padding: 30px 20px;
+  }
+
+  .login-box h2 
+  {
+    font-size: 1.5rem;
+  }
+
+  .button 
+  {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .input-group input 
+  {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

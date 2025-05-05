@@ -1,0 +1,119 @@
+:root 
+{
+    --border-color: #5900ff;
+    --secondary-color: #1b1b1b;
+    --text-color: #fff;
+    --border-radius: 30px;
+    --transition-duration: 0.3s;
+  
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #3F77BF;
+    --highlight: #F24B78;
+    --text: #F1F0F2;
+    --accent: #22F2DD;
+  
+    --bg-light: #F1F0F2;
+    --bg-gradient: #40161D;
+    --main-color: #BF2C38;
+    --dark-text: #0D0D0D;
+  }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(160deg, var(--bg-primary), var(--bg-secondary));
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-container {
+  background-color: rgba(13, 13, 13, 0.85);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px var(--highlight);
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 0.8rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+input, textarea, select {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: var(--highlight);
+  color: var(--text);
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+button:focus {
+  outline: none;
+}
+
+#tech-actions {
+  display: none;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 25px var(--highlight);
+  }
+  to {
+    box-shadow: 0 0 40px var(--accent);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
