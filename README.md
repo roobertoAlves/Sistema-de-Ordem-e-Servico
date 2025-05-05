@@ -131,13 +131,6 @@ http://localhost/Projeto/view/homeScreen.php
 
 ---
 
-## Contribuição
-
-Contribuições são bem-vindas.
-Sinta-se à vontade para abrir issues ou enviar pull requests com sugestões e melhorias.
-
----
-
 ## Observações
 
 Desenvolvido com PHP OO, padrão MVC e foco em código limpo.
